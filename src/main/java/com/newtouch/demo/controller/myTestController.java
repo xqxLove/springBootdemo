@@ -23,8 +23,5 @@ public class myTestController {
         map.put("key2","value2");
         return map;
     }
-    protected String xx(){
-        System.out.println("========>11");
-        return null;
-    }
+
 }
