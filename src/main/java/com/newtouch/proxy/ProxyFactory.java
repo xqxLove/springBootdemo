@@ -20,7 +20,7 @@ public Object genProxyBean() {
         return Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
-                (Object proxy, Method method, Object[] args)->{
+                (Object proxy, Method method, Object[] args)->{//lambda表达式 ：省去了复杂的函数表达式接口；lambada表达式结构：参数，箭头，主体
                         System.out.println("------订单操作前,记录日志------");
                         //运用反射执行目标对象方法
                         Object returnValue = method.invoke(target, args);
