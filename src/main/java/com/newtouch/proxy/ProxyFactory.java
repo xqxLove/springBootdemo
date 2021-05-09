@@ -31,7 +31,7 @@ public Object genProxyBean() {
 //                    @Override
 //                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 //                        System.out.println("------订单操作前,记录日志------");
-//                        //运用反射执行目标对象方法
+//                        //运用反射执行目标对象方法；
 //                        Object returnValue = method.invoke(target, args);
 //                        System.out.println("------订单操作后,记录日志------");
 //                        return returnValue;  //返回已经扩展后的代理对象
