@@ -1,6 +1,6 @@
 package com.newtouch.test;
-
 import org.junit.Test;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -24,6 +24,9 @@ public class TestJDKProxyTest {
     public void test1() {//按条件取值
         //throw new NullPointerException();
         //System.out.println("main");
+        String a=null;
+        System.out.println("a="+a.toString());
+        System.out.println();
         IntStream.of(new int[] {1, 2, 3}).forEach(System.out::println);
         System.out.println("=====================================");
         IntStream.range(1, 3).forEach(System.out::println);
@@ -34,6 +37,11 @@ public class TestJDKProxyTest {
     @Test
     public void turnUpperCase() {//map操作字符串转大写
         List<String> list = Arrays.asList(new String[] {"aaa", "bbb", "ccc"});
+        List<String> list1=new ArrayList<String>();
+        if(CollectionUtils.isEmpty(list1)){
+            System.out.println(list);
+            System.out.println(list1);
+        }
         List<String> result = list.stream().map(String::toUpperCase).collect(Collectors.toList());
         result.forEach(x -> System.out.print(x + " "));
     }
@@ -97,6 +105,20 @@ public class TestJDKProxyTest {
         System.out.println(result);
         System.out.println(result.orElse(0));
     }
-
-
+    @Test
+    public  void xxx() {
+//截取
+//        String a="/order";
+//        String b="/order000000000000001";
+//        int index=b.lastIndexOf(a);
+//        System.out.println(b.substring(index+a.length()));
+        //排序
+        List<String> alist=Arrays.asList("00a","00y","00f","00g","00c");
+        //小->大
+        // Collections.sort(alist,(o1,o2)->o1.compareTo(o2));
+        //大->小
+        Collections.sort(alist,(o1,o2)->o2.compareTo(o1));
+        System.out.println("00f index is"+Collections.binarySearch(alist,"00f"));
+        alist.forEach(s-> System.out.println(s));
+    }
 }

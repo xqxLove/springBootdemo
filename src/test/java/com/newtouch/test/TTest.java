@@ -30,12 +30,12 @@ public class TTest {
         while (true) {
             i++;
             if (i < 5) {
-                System.out.println(i);
+                System.out.println("i<5=="+i);
                 break;
             }
-            System.out.println(i);
+            System.out.println("xia yi ge i="+i);
             if(i == 10){
-                System.out.println(i);
+                System.out.println("i=10--->"+i);
                 return;
             }
         }
@@ -46,7 +46,7 @@ public class TTest {
         User user=new User();
         user.setPhone("0000");
         user.setName("aaa");
-        BeanUtils.copyProperties(user1,user2);
+        BeanUtils.copyProperties(user,user2);
         System.out.println("user1="+user1);
         System.out.println("user2="+user2);
     }
